@@ -1,7 +1,7 @@
 name: Deploy MkDocs site to GitHub Pages
 
 on:
-  pusih:
+  push:
     branches:
       - main
 
