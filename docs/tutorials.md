@@ -10,7 +10,7 @@ Esto resuelve automáticamente la integral y genera los gráficos.
 
 ## Gráficos generados
 
-Al ejecutar el script, se generan dos gráficos:
+Al ejecutar el script, se generan dos gráficos, los cuales evidencian que la cuadratura converge al valor real y que el error disminuye cuando el valor de N aumenta:
 
 ![Convergencia de la cuadratura](convergencia.png)
 

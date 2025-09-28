@@ -25,9 +25,8 @@ def gaussxw(N):
         N (int): Número de puntos de la cuadratura, cambiar este valor cambia el resultado de la aproximación de la integral.
         
     Returns:
-        tuple: Una tupla (pto, peso) donde:
-            - pto (numpy.ndarray): Array con los puntos de colocación/nodos
-            - peso (numpy.ndarray): Array con los pesos correspondientes
+        pto (numpy.ndarray): Array con los puntos de colocación/nodos
+        peso (numpy.ndarray): Array con los pesos correspondientes
             
     Examples:
         >>> pto, peso = gaussxw(1)  # Un solo punto
@@ -59,9 +58,8 @@ def gaussxwab(liminf, limsup, pto, peso):
         peso (numpy.ndarray): Pesos correspondientes en [-1, 1].
         
     Returns:
-        tuple: Una tupla (pto_escalados, peso_escalados) donde:
-            - pto_esc (numpy.ndarray): Puntos transformados al nuevo intervalo
-            - peso_esc (numpy.ndarray): Pesos transformados al nuevo intervalo
+        pto_esc (numpy.ndarray): Puntos transformados al nuevo intervalo
+        peso_esc (numpy.ndarray): Pesos transformados al nuevo intervalo
             
     Examples:
         >>> pto, peso = gaussxw(2)
@@ -86,7 +84,7 @@ def func_arg_int(x):
         x (float or numpy.ndarray): Variable independiente, preimagen.
         
     Returns:
-        float or numpy.ndarray: Valor de la función evaluada en x.
+        (float or numpy.ndarray): Valor de la función evaluada en x.
         
     Examples:
         >>> #Ejemplo con punto
@@ -115,7 +113,7 @@ def eva_int(pto, peso, func):
         func (callable): Función a integrar.
         
     Returns:
-        float: Valor aproximado de la integral.
+        (float): Valor aproximado de la integral.
         
     Examples:
         >>> pto, peso = gaussxw(2)
@@ -139,7 +137,7 @@ def derivada_analitica(x):
         x (float or numpy.ndarray): Variable independiente, preimagen.
         
     Returns:
-        float or numpy.ndarray: Valor de la antiderivada evaluada en x.
+        (float or numpy.ndarray): Valor de la antiderivada evaluada en x.
         
     Examples:
         >>> # F(0) = -1/4
@@ -157,9 +155,20 @@ def derivada_analitica(x):
             x / 2 * np.sin(2*x) - 1/4 * np.cos(2*x))
 
 
-if __name__ == "__main__":
+def main():
     r"""
-    Script principal que ejecuta el método numérico y encuentra el N para obtener un valor de la integral con un error relativo de bajo de la tolerancia
+    Resuelve la integral definida $\int_{1}^{3} [x^{6} - x^{2} \sin(2x)] dx$ utilizando la Cuadratura Gauss-Legendre y determina el número de puntos (N) necesario para alcanzar una tolerancia de error relativo.
+
+    El script calcula iterativamente la integral para valores crecientes de N
+    (número de puntos de cuadratura) hasta que el error relativo de la
+    aproximación respecto al valor analítico es menor que una tolerancia
+    establecida de $10^{-10}$.
+
+    Outputs:
+        - Imprime los resultados de la convergencia en la consola.
+        - Genera y guarda dos gráficos PNG:
+          1. 'convergencia.png': Gráfico de convergencia de la integral.
+          2. 'error.png': Gráfico del error relativo vs N.
     """
     print("Cuadratura Gaussiana: Resolución de ∫₁³ [x⁶ - x² sin(2x)] dx")
     # Calculo del valor analítico/exacto
@@ -227,4 +236,11 @@ if __name__ == "__main__":
     plt.legend()
     plt.savefig("error.png", dpi=300)
     print("Gráfico guardado: error.png")
+
+if __name__ == "__main__":
+    """
+    Script principal que ejecuta el método numérico y encuentra el N para
+    obtener un valor de la integral con un error relativo de bajo de la tolerancia.
+    """
+    main()
 
