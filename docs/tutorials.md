@@ -40,7 +40,7 @@ print(f"Error: {error:.2e}")
 ### Resultado esperado
 
 ```
-Integral: 317.344226721969
+Integral: 317.34422672196945
 Valor exacto: 317.34424667382643
 Error: 6.29e-08
 ```
