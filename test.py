@@ -1,16 +1,3 @@
-# Tutorial - Ejemplo de Uso
-
-### Ejecutar el script desde el terminal
-
-```bash
-python cuadrature.py
-```
-
-Esto resuelve automáticamente la integral y genera los gráficos.
-
-### Usar las funciones
-
-```python
 import cuadrature as cq
 
 # Calcular integral con 5 puntos
@@ -26,13 +13,3 @@ error = abs(resultado - exacto) / exacto
 
 print(f"Valor exacto: {exacto}")
 print(f"Error: {error:.2e}")
-```
-
-### Resultado esperado
-
-```
-Integral: 317.344226721969
-Valor exacto: 317.34424667382643
-Error: 6.29e-08
-```
-

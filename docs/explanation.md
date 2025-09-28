@@ -1,5 +1,6 @@
 # Explicación del Método de Cuadratura Gaussiana
 
+
 La **cuadratura Gauss-Legendre** es un método que permite aproximar integrales en el intervalo \([-1,1]\):
 
 \[
