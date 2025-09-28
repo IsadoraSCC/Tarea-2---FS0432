@@ -1,23 +1,10 @@
-site_name: "Tarea 2 - Física Computacional"
+site_name: Tarea 2 FS0432
+nav:
+  - Home: index.md
+  - Explanation: explanation.md
+  - Reference: reference.md
+  - Tutorials: tutorials.md
+
 theme:
   name: material
-
-nav:
-  - Inicio: index.md
-  - Explicación: explanation.md
-  - Referencias: reference.md
-  - Tutoriales: tutorials.md
-
-markdown_extensions:
-  - admonition
-  - codehilite
-  - footnotes
-  - toc:
-      permalink: true
-  - pymdownx.arithmatex:
-      generic: true
-
-extra_javascript:
-  - javascripts/mathjax.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
