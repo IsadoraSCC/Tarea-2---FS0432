@@ -343,6 +343,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cuadrature.main" class="md-nav__link">
+    <span class="md-ellipsis">
+      main
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -448,6 +457,15 @@
   <a href="#cuadrature.gaussxwab" class="md-nav__link">
     <span class="md-ellipsis">
       gaussxwab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuadrature.main" class="md-nav__link">
+    <span class="md-ellipsis">
+      main
     </span>
   </a>
   
@@ -562,10 +580,11 @@ la integral: I = ∫₁³ [x⁶ - x² sin(2x)] dx</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
+                  <code><span title="float">float</span> or <span title="numpy.ndarray">ndarray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>float or numpy.ndarray: Valor de la antiderivada evaluada en x.</p>
+                <p>Valor de la antiderivada evaluada en x.</p>
               </div>
             </td>
           </tr>
@@ -589,7 +608,9 @@ la integral: I = ∫₁³ [x⁶ - x² sin(2x)] dx</p>
 
             <details class="quote">
               <summary>Source code in <code>cuadrature.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">132</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
 <span class="normal">133</span>
 <span class="normal">134</span>
 <span class="normal">135</span>
@@ -612,9 +633,7 @@ la integral: I = ∫₁³ [x⁶ - x² sin(2x)] dx</p>
 <span class="normal">152</span>
 <span class="normal">153</span>
 <span class="normal">154</span>
-<span class="normal">155</span>
-<span class="normal">156</span>
-<span class="normal">157</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">derivada_analitica</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="normal">155</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">derivada_analitica</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calcula la antiderivada de f(x) = x⁶ - x² sin(2x).</span>
 
@@ -624,7 +643,7 @@ la integral: I = ∫₁³ [x⁶ - x² sin(2x)] dx</p>
 <span class="sd">        x (float or numpy.ndarray): Variable independiente, preimagen.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        float or numpy.ndarray: Valor de la antiderivada evaluada en x.</span>
+<span class="sd">        (float or numpy.ndarray): Valor de la antiderivada evaluada en x.</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        &gt;&gt;&gt; # F(0) = -1/4</span>
@@ -728,13 +747,14 @@ la integral: I = ∫₁³ [x⁶ - x² sin(2x)] dx</p>
     <table>
       <thead>
         <tr>
-<th>Name</th>          <th>Type</th>
+          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>float</code></td>            <td>
+            <td>
+                  <code><span title="float">float</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -759,7 +779,9 @@ la integral: I = ∫₁³ [x⁶ - x² sin(2x)] dx</p>
 
             <details class="quote">
               <summary>Source code in <code>cuadrature.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">106</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
 <span class="normal">107</span>
 <span class="normal">108</span>
 <span class="normal">109</span>
@@ -780,9 +802,7 @@ la integral: I = ∫₁³ [x⁶ - x² sin(2x)] dx</p>
 <span class="normal">124</span>
 <span class="normal">125</span>
 <span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">eva_int</span><span class="p">(</span><span class="n">pto</span><span class="p">,</span> <span class="n">peso</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+<span class="normal">127</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">eva_int</span><span class="p">(</span><span class="n">pto</span><span class="p">,</span> <span class="n">peso</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
 <span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Evalúa la integral aproximada usando cuadratura Gauss-Legendre.</span>
 
@@ -794,7 +814,7 @@ la integral: I = ∫₁³ [x⁶ - x² sin(2x)] dx</p>
 <span class="sd">        func (callable): Función a integrar.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        float: Valor aproximado de la integral.</span>
+<span class="sd">        (float): Valor aproximado de la integral.</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        &gt;&gt;&gt; pto, peso = gaussxw(2)</span>
@@ -868,10 +888,11 @@ la integral: I = ∫₁³ [x⁶ - x² sin(2x)] dx</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
+                  <code><span title="float">float</span> or <span title="numpy.ndarray">ndarray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>float or numpy.ndarray: Valor de la función evaluada en x.</p>
+                <p>Valor de la función evaluada en x.</p>
               </div>
             </td>
           </tr>
@@ -895,7 +916,9 @@ la integral: I = ∫₁³ [x⁶ - x² sin(2x)] dx</p>
 
             <details class="quote">
               <summary>Source code in <code>cuadrature.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 81</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
 <span class="normal"> 82</span>
 <span class="normal"> 83</span>
 <span class="normal"> 84</span>
@@ -915,9 +938,7 @@ la integral: I = ∫₁³ [x⁶ - x² sin(2x)] dx</p>
 <span class="normal"> 98</span>
 <span class="normal"> 99</span>
 <span class="normal">100</span>
-<span class="normal">101</span>
-<span class="normal">102</span>
-<span class="normal">103</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">func_arg_int</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="normal">101</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">func_arg_int</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Función que queremos integrar: f(x) = x⁶ - x² sin(2x).</span>
 
@@ -925,7 +946,7 @@ la integral: I = ∫₁³ [x⁶ - x² sin(2x)] dx</p>
 <span class="sd">        x (float or numpy.ndarray): Variable independiente, preimagen.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        float or numpy.ndarray: Valor de la función evaluada en x.</span>
+<span class="sd">        (float or numpy.ndarray): Valor de la función evaluada en x.</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        &gt;&gt;&gt; #Ejemplo con punto</span>
@@ -1003,13 +1024,22 @@ y sus respectivos pesos que se utilizaran para la cuadratura Gaussiana.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>tuple</code></td>            <td>
+<td><code>pto</code></td>            <td>
+                  <code><span title="numpy.ndarray">ndarray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Una tupla (pto, peso) donde:
-- pto (numpy.ndarray): Array con los puntos de colocación/nodos
-- peso (numpy.ndarray): Array con los pesos correspondientes</p>
+                <p>Array con los puntos de colocación/nodos</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+<td><code>peso</code></td>            <td>
+                  <code><span title="numpy.ndarray">ndarray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Array con los pesos correspondientes</p>
               </div>
             </td>
           </tr>
@@ -1060,8 +1090,7 @@ y sus respectivos pesos que se utilizaran para la cuadratura Gaussiana.</p>
 <span class="normal">41</span>
 <span class="normal">42</span>
 <span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxw</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxw</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
 <span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calcula los nodos y pesos de la cuadratura Gauss-Legendre en el intervalo [-1, 1].</span>
 
@@ -1072,9 +1101,8 @@ y sus respectivos pesos que se utilizaran para la cuadratura Gaussiana.</p>
 <span class="sd">        N (int): Número de puntos de la cuadratura, cambiar este valor cambia el resultado de la aproximación de la integral.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        tuple: Una tupla (pto, peso) donde:</span>
-<span class="sd">            - pto (numpy.ndarray): Array con los puntos de colocación/nodos</span>
-<span class="sd">            - peso (numpy.ndarray): Array con los pesos correspondientes</span>
+<span class="sd">        pto (numpy.ndarray): Array con los puntos de colocación/nodos</span>
+<span class="sd">        peso (numpy.ndarray): Array con los pesos correspondientes</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        &gt;&gt;&gt; pto, peso = gaussxw(1)  # Un solo punto</span>
@@ -1201,13 +1229,22 @@ del intervalo estándar [-1, 1] a nuevos puntos de colocación y pesos para cual
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>tuple</code></td>            <td>
+<td><code>pto_esc</code></td>            <td>
+                  <code><span title="numpy.ndarray">ndarray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Una tupla (pto_escalados, peso_escalados) donde:
-- pto_esc (numpy.ndarray): Puntos transformados al nuevo intervalo
-- peso_esc (numpy.ndarray): Pesos transformados al nuevo intervalo</p>
+                <p>Puntos transformados al nuevo intervalo</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+<td><code>peso_esc</code></td>            <td>
+                  <code><span title="numpy.ndarray">ndarray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Pesos transformados al nuevo intervalo</p>
               </div>
             </td>
           </tr>
@@ -1230,7 +1267,8 @@ del intervalo estándar [-1, 1] a nuevos puntos de colocación y pesos para cual
 
             <details class="quote">
               <summary>Source code in <code>cuadrature.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">48</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">47</span>
+<span class="normal">48</span>
 <span class="normal">49</span>
 <span class="normal">50</span>
 <span class="normal">51</span>
@@ -1258,9 +1296,7 @@ del intervalo estándar [-1, 1] a nuevos puntos de colocación y pesos para cual
 <span class="normal">73</span>
 <span class="normal">74</span>
 <span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxwab</span><span class="p">(</span><span class="n">liminf</span><span class="p">,</span> <span class="n">limsup</span><span class="p">,</span> <span class="n">pto</span><span class="p">,</span> <span class="n">peso</span><span class="p">):</span>
+<span class="normal">76</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxwab</span><span class="p">(</span><span class="n">liminf</span><span class="p">,</span> <span class="n">limsup</span><span class="p">,</span> <span class="n">pto</span><span class="p">,</span> <span class="n">peso</span><span class="p">):</span>
 <span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Escala los nodos y pesos desde el intervalo [-1, 1] a [liminf, limsup].</span>
 
@@ -1274,9 +1310,8 @@ del intervalo estándar [-1, 1] a nuevos puntos de colocación y pesos para cual
 <span class="sd">        peso (numpy.ndarray): Pesos correspondientes en [-1, 1].</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        tuple: Una tupla (pto_escalados, peso_escalados) donde:</span>
-<span class="sd">            - pto_esc (numpy.ndarray): Puntos transformados al nuevo intervalo</span>
-<span class="sd">            - peso_esc (numpy.ndarray): Pesos transformados al nuevo intervalo</span>
+<span class="sd">        pto_esc (numpy.ndarray): Puntos transformados al nuevo intervalo</span>
+<span class="sd">        peso_esc (numpy.ndarray): Pesos transformados al nuevo intervalo</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        &gt;&gt;&gt; pto, peso = gaussxw(2)</span>
@@ -1291,6 +1326,203 @@ del intervalo estándar [-1, 1] a nuevos puntos de colocación y pesos para cual
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">limsup</span> <span class="o">-</span> <span class="n">liminf</span><span class="p">)</span> <span class="o">*</span> <span class="n">pto</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">limsup</span> <span class="o">+</span> <span class="n">liminf</span><span class="p">),</span> 
             <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">limsup</span> <span class="o">-</span> <span class="n">liminf</span><span class="p">)</span> <span class="o">*</span> <span class="n">peso</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="cuadrature.main" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">main</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Resuelve la integral definida <span class="arithmatex">\(\int_{1}^{3} [x^{6} - x^{2} \sin(2x)] dx\)</span> utilizando la Cuadratura Gauss-Legendre y determina el número de puntos (N) necesario para alcanzar una tolerancia de error relativo.</p>
+<p>El script calcula iterativamente la integral para valores crecientes de N
+(número de puntos de cuadratura) hasta que el error relativo de la
+aproximación respecto al valor analítico es menor que una tolerancia
+establecida de <span class="arithmatex">\(10^{-10}\)</span>.</p>
+
+
+<details class="outputs" open>
+  <summary>Outputs</summary>
+  <ul>
+<li>Imprime los resultados de la convergencia en la consola.</li>
+<li>Genera y guarda dos gráficos PNG:</li>
+<li>'convergencia.png': Gráfico de convergencia de la integral.</li>
+<li>'error.png': Gráfico del error relativo vs N.</li>
+</ul>
+</details>
+
+            <details class="quote">
+              <summary>Source code in <code>cuadrature.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Resuelve la integral definida $\int_{1}^{3} [x^{6} - x^{2} \sin(2x)] dx$ utilizando la Cuadratura Gauss-Legendre y determina el número de puntos (N) necesario para alcanzar una tolerancia de error relativo.</span>
+
+<span class="sd">    El script calcula iterativamente la integral para valores crecientes de N</span>
+<span class="sd">    (número de puntos de cuadratura) hasta que el error relativo de la</span>
+<span class="sd">    aproximación respecto al valor analítico es menor que una tolerancia</span>
+<span class="sd">    establecida de $10^{-10}$.</span>
+
+<span class="sd">    Outputs:</span>
+<span class="sd">        - Imprime los resultados de la convergencia en la consola.</span>
+<span class="sd">        - Genera y guarda dos gráficos PNG:</span>
+<span class="sd">          1. &#39;convergencia.png&#39;: Gráfico de convergencia de la integral.</span>
+<span class="sd">          2. &#39;error.png&#39;: Gráfico del error relativo vs N.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cuadratura Gaussiana: Resolución de ∫₁³ [x⁶ - x² sin(2x)] dx&quot;</span><span class="p">)</span>
+    <span class="c1"># Calculo del valor analítico/exacto</span>
+    <span class="n">analytic</span> <span class="o">=</span> <span class="n">derivada_analitica</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">derivada_analitica</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor analítico:&quot;</span><span class="p">,</span> <span class="n">analytic</span><span class="p">)</span>
+
+    <span class="c1"># Se prueba con varios valores de N hasta alcanzar que el error alcanza una tolerencia de 1e-10</span>
+    <span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-10</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">N_valores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">integral_valores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">errores</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="c1"># Obtener puntos y pesos de Gauss-Legendre</span>
+        <span class="n">pto</span><span class="p">,</span> <span class="n">peso</span> <span class="o">=</span> <span class="n">gaussxw</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+        <span class="c1"># Escalar al intervalo [1, 3]</span>
+        <span class="n">pto_esc</span><span class="p">,</span> <span class="n">peso_esc</span> <span class="o">=</span> <span class="n">gaussxwab</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">pto</span><span class="p">,</span> <span class="n">peso</span><span class="p">)</span>
+        <span class="c1"># Evaluar integral aproximada</span>
+        <span class="n">approx</span> <span class="o">=</span> <span class="n">eva_int</span><span class="p">(</span><span class="n">pto_esc</span><span class="p">,</span> <span class="n">peso_esc</span><span class="p">,</span> <span class="n">func_arg_int</span><span class="p">)</span>
+        <span class="c1"># Calcular error relativo</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">approx</span> <span class="o">-</span> <span class="n">analytic</span><span class="p">)</span> <span class="o">/</span> <span class="n">analytic</span>
+
+        <span class="c1"># Guardar resultados</span>
+        <span class="n">N_valores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+        <span class="n">integral_valores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">approx</span><span class="p">)</span>
+        <span class="n">errores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;N = </span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2">, integral ≈ </span><span class="si">{</span><span class="n">approx</span><span class="si">:</span><span class="s2">.12f</span><span class="si">}</span><span class="s2">, error = </span><span class="si">{</span><span class="n">err</span><span class="si">:</span><span class="s2">.12f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Verificar convergencia</span>
+        <span class="k">if</span> <span class="n">err</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">N</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="c1"># Evitar bucle infinito</span>
+        <span class="k">if</span> <span class="n">N</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
+            <span class="k">break</span>
+
+
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Primer N con error &lt; </span><span class="si">{</span><span class="n">tol</span><span class="si">}</span><span class="s2"> es N = </span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2">, con integral ≈ </span><span class="si">{</span><span class="n">approx</span><span class="si">:</span><span class="s2">.12f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Notamos que este valor de N corresponde a lo que esperamos, en efecto, la teoria nos dice que este método es exacto para polinomios hasta grado 2N-1. Aqui se puede aproximar el sen tal que f(x) se aproxima a un polinomio de grado 6.&quot;</span><span class="p">)</span>
+    <span class="c1"># Gráfico 1: Convergencia</span>
+    <span class="c1"># Se grafica la integral para varios valores de N para ver que converge al valor teórico</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">N_valores</span><span class="p">,</span> <span class="n">integral_valores</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Aproximación&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">analytic</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Valor analítico&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;N (número de puntos)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Valor de la integral&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Convergencia de la cuadratura Gauss-Legendre&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;convergencia.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gráfico guardado: convergencia.png&quot;</span><span class="p">)</span>
+
+
+    <span class="c1"># Gráfico 2: Error relativo</span>
+    <span class="c1"># Se grafica el error para diferentes valores de N para ver que de crece</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">N_valores</span><span class="p">,</span> <span class="n">errores</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Error relativo&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;N (número de puntos)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Error relativo&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Disminución del error con Gauss-Legendre&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;error.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gráfico guardado: error.png&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
