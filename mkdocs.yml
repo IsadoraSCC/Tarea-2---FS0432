@@ -9,3 +9,15 @@ theme:
   name: material
   feature:  
     - navigation.toc
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [.] 
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
