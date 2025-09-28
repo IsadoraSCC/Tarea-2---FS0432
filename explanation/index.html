@@ -227,6 +227,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Explanation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -238,6 +251,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#algoritmo-para-la-aproximacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algoritmo para la aproximación
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -307,6 +348,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#algoritmo-para-la-aproximacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algoritmo para la aproximación
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -322,37 +380,45 @@
 
 
 <h1 id="explicacion-del-metodo-de-cuadratura-gaussiana">Explicación del Método de Cuadratura Gaussiana</h1>
-<p>La <strong>cuadratura Gauss-Legendre</strong> es un método que permite aproximar integrales en el intervalo ([-1,1]):</p>
-<p>[
+<p>La <strong>cuadratura Gauss-Legendre</strong> es un método que permite aproximar integrales en el intervalo <span class="arithmatex">\([-1,1]\)</span>:</p>
+<div class="arithmatex">\[
 \int_{-1}^1 f(t)\,dt \approx \sum_{i=1}^N w_i f(t_i)
-]</p>
-<p>donde (t_i) son las raíces del polinomio de Legendre de orden (N), y (w_i) son pesos asociados.</p>
-<p>Este método permite obtener un mejor resultado que el método de trapecio para un mismo (N). </p>
-<p>Se utiliza los polinomios de Legrendre, los cuales son funciones matemáticas que se usan como "base" para nuestro método. Los primeros son:</p>
+\]</div>
+<p>donde <span class="arithmatex">\(t_i\)</span> son las raíces del polinomio de Legendre de orden <span class="arithmatex">\(N\)</span>, y <span class="arithmatex">\(w_i\)</span> son los pesos asociados.</p>
+<p>Este método permite obtener un mejor resultado que el método del trapecio para un mismo <span class="arithmatex">\(N\)</span>.</p>
+<p>Se utilizan los polinomios de Legendre, los cuales son funciones matemáticas que se usan como "base" para nuestro método. Los primeros son:</p>
 <ul>
-<li>(P_0(x) = 1)</li>
-<li>(P_1(x) = x)</li>
-<li>(P_2(x) = \frac{1}{2}(3x^2 - 1))</li>
-<li>(P_3(x) = \frac{1}{2}(5x^3 - 3x))</li>
+<li><span class="arithmatex">\(P_0(x) = 1\)</span></li>
+<li><span class="arithmatex">\(P_1(x) = x\)</span></li>
+<li><span class="arithmatex">\(P_2(x) = \tfrac{1}{2}(3x^2 - 1)\)</span></li>
+<li><span class="arithmatex">\(P_3(x) = \tfrac{1}{2}(5x^3 - 3x)\)</span></li>
 </ul>
-<p>Para integrar en un intervalo ([a,b]), se usa el cambio de variable:</p>
-<p>[
-x = \tfrac{b-a}{2} t + \tfrac{b+a}{2}
-]</p>
-<p>Esto nos da: </p>
-<p>[
-\int_a^b f(x)\,dx \approx \tfrac{b-a}{2} \sum_{i=1}^N w_i \, f!\left(\tfrac{b-a}{2}t_i + \tfrac{b+a}{2}\right).
-]</p>
-<p>Para nuestro caso específico ([1, 3]): 
-$$x = \frac{3-1}{2}\xi + \frac{1+3}{2} = \xi + 2$$</p>
-<p>El algoritmo para realizar la aproximación sigue los siguientes pasos : 
-1. Empezar con N = 1 punto
-2. Calcular puntos y pesos en [-1, 1] usando Legendre
-3. Escalar al intervalo [1, 3]
-4. Evaluar la integral usando la suma ponderada
-5. Calcular el error comparando con el valor exacto
-6. Si el error es muy grande, aumentar N y repetir</p>
-<p>Este método es exacto para polinomios hasta grado (2N-1).</p>
+<hr />
+<p>Para integrar en un intervalo <span class="arithmatex">\([a,b]\)</span>, se usa el cambio de variable:</p>
+<div class="arithmatex">\[
+x = \tfrac{b-a}{2}\, t + \tfrac{b+a}{2}
+\]</div>
+<p>Esto nos da:</p>
+<div class="arithmatex">\[
+\int_a^b f(x)\,dx \;\approx\; \tfrac{b-a}{2} \sum_{i=1}^N w_i \, f\!\left(\tfrac{b-a}{2}\,t_i + \tfrac{b+a}{2}\right).
+\]</div>
+<hr />
+<p>Para nuestro caso específico <span class="arithmatex">\([1,3]\)</span>:</p>
+<div class="arithmatex">\[
+x = \frac{3-1}{2}\,\xi + \frac{1+3}{2} \;=\; \xi + 2
+\]</div>
+<hr />
+<h3 id="algoritmo-para-la-aproximacion">Algoritmo para la aproximación</h3>
+<ol>
+<li>Empezar con <span class="arithmatex">\(N = 1\)</span> punto.  </li>
+<li>Calcular puntos y pesos en <span class="arithmatex">\([-1, 1]\)</span> usando Legendre.  </li>
+<li>Escalar al intervalo <span class="arithmatex">\([1, 3]\)</span>.  </li>
+<li>Evaluar la integral usando la suma ponderada.  </li>
+<li>Calcular el error comparando con el valor exacto.  </li>
+<li>Si el error es muy grande, aumentar <span class="arithmatex">\(N\)</span> y repetir.  </li>
+</ol>
+<hr />
+<p>Este método es exacto para polinomios hasta grado <span class="arithmatex">\(2N - 1\)</span>.</p>
 
 
 
@@ -405,6 +471,10 @@ $$x = \frac{3-1}{2}\xi + \frac{1+3}{2} = \xi + 2$$</p>
     
     
       <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

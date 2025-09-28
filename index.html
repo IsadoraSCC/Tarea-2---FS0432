@@ -321,12 +321,13 @@
 
 <h1 id="introduccion">Introducción</h1>
 <p>El objetivo de esta tarea es resolver la siguiente integral:</p>
-<p>[
+<div class="arithmatex">\[
 I = \int_1^3 \left( x^6 - x^2 \sin(2x) \right)\, dx
-]</p>
-<p>Para esto, utilizamos el método de <strong>la cuadratura Gaussiana</strong>, usando los <strong>polinomios de Legendre</strong>, método tambien conocido como <strong>cuadratura Gauss-Legendre</strong>.</p>
-<p>Para esto, se implemento el método mediante un script de python <code>cuadrature.py</code>, se probo varios valores de (N) con el fin de encontrar un valor para la integral con un error relativo menor a $10^(10)$, respecto al valor analitico.</p>
-<p>Ademas, se realiza la documentacion del codigo usando <strong>MkDocs</strong>  </p>
+\]</div>
+<p>Para esto, utilizamos el método de <strong>la cuadratura Gaussiana</strong>, usando los <strong>polinomios de Legendre</strong>, método también conocido como <strong>cuadratura Gauss-Legendre</strong>.</p>
+<p>Se implementó el método mediante un script de Python <code>cuadrature.py</code>.<br />
+Se probaron varios valores de <span class="arithmatex">\(N\)</span> con el fin de encontrar un valor para la integral con un error relativo menor a <span class="arithmatex">\(10^{-10}\)</span>, respecto al valor analítico.</p>
+<p>Además, se realiza la documentación del código usando <strong>MkDocs</strong>.</p>
 
 
 
@@ -379,6 +380,10 @@ I = \int_1^3 \left( x^6 - x^2 \sin(2x) \right)\, dx
     
     
       <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
