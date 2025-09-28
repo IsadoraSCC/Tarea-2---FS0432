@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""
+r"""
 Módulo de cuadratura Gaussiana para integración numérica, usando los polinomios de Legendre.
 
 Este módulo implementa el método de cuadratura Gauss-Legendre para resolver
@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 
 
 def gaussxw(N):
-    """
+    r"""
     Calcula los nodos y pesos de la cuadratura Gauss-Legendre en el intervalo [-1, 1].
     
     Utiliza los polinomios de Legendre para generar los puntos de colocación
@@ -46,7 +46,7 @@ def gaussxw(N):
 
 
 def gaussxwab(liminf, limsup, pto, peso):
-    """
+    r"""
     Escala los nodos y pesos desde el intervalo [-1, 1] a [liminf, limsup].
     
     Transforma los puntos de colocación y pesos de la cuadratura Gaussiana
@@ -79,7 +79,7 @@ def gaussxwab(liminf, limsup, pto, peso):
 
 
 def func_arg_int(x):
-    """
+    r"""
     Función que queremos integrar: f(x) = x⁶ - x² sin(2x).
     
     Args:
@@ -104,7 +104,7 @@ def func_arg_int(x):
 
 
 def eva_int(pto, peso, func):
-    """
+    r"""
     Evalúa la integral aproximada usando cuadratura Gauss-Legendre.
     
     Calcula la integral usando la suma de la función evaluada en los puntos de colocación por los pesos respectivos.
@@ -130,7 +130,7 @@ def eva_int(pto, peso, func):
 
 
 def derivada_analitica(x):
-    """
+    r"""
     Calcula la antiderivada de f(x) = x⁶ - x² sin(2x).
     
     La antiderivada (se calculo manualmente) es: F(x) = x⁷/7 + x²/2 cos(2x) - x/2 sin(2x) - 1/4 cos(2x)
@@ -158,7 +158,7 @@ def derivada_analitica(x):
 
 
 if __name__ == "__main__":
-    """
+    r"""
     Script principal que ejecuta el método numérico y encuentra el N para obtener un valor de la integral con un error relativo de bajo de la tolerancia
     """
     print("Cuadratura Gaussiana: Resolución de ∫₁³ [x⁶ - x² sin(2x)] dx")
