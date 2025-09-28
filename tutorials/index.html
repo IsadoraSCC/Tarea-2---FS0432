@@ -41,6 +41,8 @@
       
     
     
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -443,35 +445,35 @@
 
 <h1 id="tutorial-ejemplo-de-uso">Tutorial - Ejemplo de Uso</h1>
 <h3 id="ejecutar-el-script-desde-el-terminal">Ejecutar el script desde el terminal</h3>
-<pre><code class="language-bash">python cuadrature.py
-</code></pre>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>cuadrature.py
+</code></pre></div>
 <p>Esto resuelve automáticamente la integral y genera los gráficos.</p>
 <h2 id="graficos-generados">Gráficos generados</h2>
 <p>Al ejecutar el script, se generan dos gráficos:</p>
 <p><img alt="Convergencia de la cuadratura" src="../convergencia.png" /></p>
 <p><img alt="Disminución del error" src="../error.png" /></p>
 <h3 id="usar-las-funciones">Usar las funciones</h3>
-<pre><code class="language-python">import cuadrature as cq
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">cuadrature</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cq</span>
 
-# Calcular integral con 5 puntos
-pto, peso = cq.gaussxw(5)
-pto_esc, peso_esc = cq.gaussxwab(1, 3, pto, peso)
-resultado = cq.eva_int(pto_esc, peso_esc, cq.func_arg_int)
+<span class="c1"># Calcular integral con 5 puntos</span>
+<span class="n">pto</span><span class="p">,</span> <span class="n">peso</span> <span class="o">=</span> <span class="n">cq</span><span class="o">.</span><span class="n">gaussxw</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">pto_esc</span><span class="p">,</span> <span class="n">peso_esc</span> <span class="o">=</span> <span class="n">cq</span><span class="o">.</span><span class="n">gaussxwab</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">pto</span><span class="p">,</span> <span class="n">peso</span><span class="p">)</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">cq</span><span class="o">.</span><span class="n">eva_int</span><span class="p">(</span><span class="n">pto_esc</span><span class="p">,</span> <span class="n">peso_esc</span><span class="p">,</span> <span class="n">cq</span><span class="o">.</span><span class="n">func_arg_int</span><span class="p">)</span>
 
-print(f&quot;Integral: {resultado}&quot;)
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Integral: </span><span class="si">{</span><span class="n">resultado</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-# Comparar con valor exacto
-exacto = cq.derivada_analitica(3) - cq.derivada_analitica(1)
-error = abs(resultado - exacto) / exacto
+<span class="c1"># Comparar con valor exacto</span>
+<span class="n">exacto</span> <span class="o">=</span> <span class="n">cq</span><span class="o">.</span><span class="n">derivada_analitica</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">cq</span><span class="o">.</span><span class="n">derivada_analitica</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">error</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">resultado</span> <span class="o">-</span> <span class="n">exacto</span><span class="p">)</span> <span class="o">/</span> <span class="n">exacto</span>
 
-print(f&quot;Valor exacto: {exacto}&quot;)
-print(f&quot;Error: {error:.2e}&quot;)
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valor exacto: </span><span class="si">{</span><span class="n">exacto</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">error</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="resultado-esperado">Resultado esperado</h3>
-<pre><code>Integral: 317.344226721969
+<div class="highlight"><pre><span></span><code>Integral: 317.344226721969
 Valor exacto: 317.34424667382643
 Error: 6.29e-08
-</code></pre>
+</code></pre></div>
 
 
 
