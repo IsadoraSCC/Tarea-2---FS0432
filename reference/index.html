@@ -615,7 +615,7 @@ la integral: I = ∫₁³ [x⁶ - x² sin(2x)] dx</p>
 <span class="normal">155</span>
 <span class="normal">156</span>
 <span class="normal">157</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">derivada_analitica</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calcula la antiderivada de f(x) = x⁶ - x² sin(2x).</span>
 
 <span class="sd">    La antiderivada (se calculo manualmente) es: F(x) = x⁷/7 + x²/2 cos(2x) - x/2 sin(2x) - 1/4 cos(2x)</span>
@@ -783,7 +783,7 @@ la integral: I = ∫₁³ [x⁶ - x² sin(2x)] dx</p>
 <span class="normal">127</span>
 <span class="normal">128</span>
 <span class="normal">129</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">eva_int</span><span class="p">(</span><span class="n">pto</span><span class="p">,</span> <span class="n">peso</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Evalúa la integral aproximada usando cuadratura Gauss-Legendre.</span>
 
 <span class="sd">    Calcula la integral usando la suma de la función evaluada en los puntos de colocación por los pesos respectivos.</span>
@@ -918,7 +918,7 @@ la integral: I = ∫₁³ [x⁶ - x² sin(2x)] dx</p>
 <span class="normal">101</span>
 <span class="normal">102</span>
 <span class="normal">103</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">func_arg_int</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Función que queremos integrar: f(x) = x⁶ - x² sin(2x).</span>
 
 <span class="sd">    Args:</span>
@@ -1062,7 +1062,7 @@ y sus respectivos pesos que se utilizaran para la cuadratura Gaussiana.</p>
 <span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxw</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calcula los nodos y pesos de la cuadratura Gauss-Legendre en el intervalo [-1, 1].</span>
 
 <span class="sd">    Utiliza los polinomios de Legendre para generar los puntos de colocación</span>
@@ -1261,7 +1261,7 @@ del intervalo estándar [-1, 1] a nuevos puntos de colocación y pesos para cual
 <span class="normal">76</span>
 <span class="normal">77</span>
 <span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxwab</span><span class="p">(</span><span class="n">liminf</span><span class="p">,</span> <span class="n">limsup</span><span class="p">,</span> <span class="n">pto</span><span class="p">,</span> <span class="n">peso</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Escala los nodos y pesos desde el intervalo [-1, 1] a [liminf, limsup].</span>
 
 <span class="sd">    Transforma los puntos de colocación y pesos de la cuadratura Gaussiana</span>
