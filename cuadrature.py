@@ -162,7 +162,7 @@ def main():
     El script calcula iterativamente la integral para valores crecientes de N
     (número de puntos de cuadratura) hasta que el error relativo de la
     aproximación respecto al valor analítico es menor que una tolerancia
-    establecida de $10^{-10}$.
+    establecida de $10^{-10}$. Llegamos que con N=7, el error esta debajo de la tolerancia. 
 
     Outputs:
         - Imprime los resultados de la convergencia en la consola.
