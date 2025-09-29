@@ -210,7 +210,7 @@ def main():
 
 
     print(f"\nPrimer N con error < {tol} es N = {N}, con integral ≈ {approx:.12f}")
-    print("Notamos que este valor de N corresponde a lo que esperamos, en efecto, la teoria nos dice que este método es exacto para polinomios hasta grado 2N-1. Aqui se puede aproximar el sen tal que f(x) se aproxima a un polinomio de grado 6.")
+  
     # Gráfico 1: Convergencia
     # Se grafica la integral para varios valores de N para ver que converge al valor teórico
     plt.figure(figsize=(9, 6))
